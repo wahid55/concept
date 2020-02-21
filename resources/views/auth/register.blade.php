@@ -25,7 +25,7 @@
             <div class="form-group">
                 <input id="password-confirm" type="password" class="form-control form-control-lg" name="password_confirmation" placeholder="{{ __('Confirm Password') }}">
             </div>
-            <div class="form-group pt-2">
+            <div class="form-group pt-2 mb-0">
                 <button class="btn btn-block btn-primary" type="submit">{{ __('Register My Account') }}</button>
             </div>
         </form>

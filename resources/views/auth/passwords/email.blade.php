@@ -16,7 +16,7 @@
                     <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
                 @enderror
             </div>
-            <div class="form-group pt-2">
+            <div class="form-group pt-2 mb-0">
                 <button class="btn btn-block btn-primary" type="submit">{{ __('Send Password Reset Link') }}</button>
             </div>
         </form>

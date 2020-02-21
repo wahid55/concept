@@ -16,7 +16,7 @@
                     <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
                 @enderror
             </div>
-            <div class="form-group">
+            <div class="form-group mb-0">
                 <label class="custom-control custom-checkbox">
                     <input class="form-check-input custom-control-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                     <span class="custom-control-label">{{ __('Remember Me') }}</span>
