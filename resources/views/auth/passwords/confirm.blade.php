@@ -1,8 +1,11 @@
 @extends('auth.index')
 
 @section('content')
+    <div class="card-header text-center">
+        <a href="{{ url('/') }}"><img class="logo-img" src="{{ asset('admin/images/logo.png') }}" alt="{{ config('app.name', 'Concept') }}"></a>
+        <span class="splash-description">{{ __('Please confirm your password before continuing.') }}</span>
+    </div>
     <div class="card-body">
-        <p class="mb-3 text-center text-secondary">{{ __('Please confirm your password before continuing.') }}</p>
         <form method="POST" action="{{ route('password.confirm') }}" autocomplete="off">
             @csrf
             <div class="form-group">

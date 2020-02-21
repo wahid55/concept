@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('auth.passwords.confirm');
+    return view('welcome');
 });
 
 Auth::routes();

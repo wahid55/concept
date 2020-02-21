@@ -38,10 +38,6 @@
         <!-- ============================================================== -->
         <div class="splash-container">
             <div class="card ">
-                <div class="card-header text-center">
-                    <a href="{{ url('/') }}"><img class="logo-img" src="{{ asset('admin/images/logo.png') }}" alt="{{ config('app.name', 'Concept') }}"></a>
-                    <span class="splash-description">{{ __('Please enter your user information.') }}</span>
-                </div>
                 @yield('content')
             </div>
         </div>
