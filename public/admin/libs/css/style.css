@@ -5284,6 +5284,9 @@ Vertical Timeline - by CodyHouse.co
 
 .card-footer-item {
     display: inline-block;
+    width: 50%;
+    float: left;
+    text-align: center;
 }
 
 .card-footer-item-bordered:not(:last-child) {
