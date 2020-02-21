@@ -7,13 +7,15 @@
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Concept') }}</title>
+        <title>@yield('title', 'Concept')</title>
+
         <!-- Bootstrap CSS -->
         <link rel="dns-prefetch" href="//fonts.gstatic.com">
         <link href="{{ asset('backend/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
         <link href="{{ asset('backend/vendor/fonts/circular-std/style.css') }}" rel="stylesheet">
         <link href="{{ asset('backend/libs/css/style.css') }}" rel="stylesheet">
         <link href="{{ asset('backend/vendor/fonts/fontawesome/css/all.min.css') }}" rel="stylesheet">
+        @yield('header')
     </head>
 
     <body>
@@ -106,17 +108,22 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="page-header">
-                                <h2 class="pageheader-title">Settings</h2>
-                                <div class="page-breadcrumb">
-                                    <nav aria-label="breadcrumb">
-                                        <ol class="breadcrumb">
-                                            <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
-                                            <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Settings</a></li>
-                                            <li class="breadcrumb-item active">Settings</li>
-                                        </ol>
-                                    </nav>
-                                </div>
+                                <h2 class="pageheader-title">@yield('title', 'Page Title')</h2>
+                                @if(request()->route()->getName() != 'dashboard')
+                                    <div class="page-breadcrumb">
+                                        <nav aria-label="breadcrumb">
+                                            <ol class="breadcrumb">
+                                                <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
+                                                <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Settings</a></li>
+                                                <li class="breadcrumb-item active">Settings</li>
+                                            </ol>
+                                        </nav>
+                                    </div>
+                                @endif
                             </div>
+
+                            @yield('content')
+
                         </div>
                     </div>
                 </div>
@@ -141,5 +148,7 @@
 
         <script src="{{ asset('backend/vendor/jquery/jquery-3.4.1.min.js') }}"></script>
         <script src="{{ asset('backend/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ asset('backend/libs/js/main-js.js') }}"></script>
+        @yield('footer')
     </body>
 </html>

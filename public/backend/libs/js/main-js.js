@@ -2,28 +2,6 @@
 jQuery(document).ready(function($) {
     'use strict';
 
-    // ============================================================== 
-    // Notification list
-    // ============================================================== z
-    if ($(".notification-list").length) {
-
-        $('.notification-list').slimScroll({
-            height: '250px'
-        });
-
-    }
-
-    // ==============================================================
-    // Menu Slim Scroll List
-    // ==============================================================
-
-
-    if ($(".menu-list").length) {
-        $('.menu-list').slimScroll({
-
-        });
-    }
-
     // ==============================================================
     // Sidebar scrollnavigation
     // ==============================================================
@@ -85,17 +63,6 @@ jQuery(document).ready(function($) {
             $('[data-toggle="popover"]').popover()
 
         }
-     // ============================================================== 
-    // Chat List Slim Scroll
-    // ============================================================== 
-        
-
-    if ($('.chat-list').length) {
-        $('.chat-list').slimScroll({
-            color: 'false',
-            width: '100%'
-        });
-    }
 
 
     if ($("[data-table='dataTable']").length) {
