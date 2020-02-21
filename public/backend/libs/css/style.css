@@ -1498,6 +1498,7 @@ Top Header
     background-color: #5969ff;
     line-height: 1.4;
     padding: 12px;
+    margin-bottom: 10px;
     color: #fff;
     font-size: 13px;
     border-radius: 2px 2px 0 0;
@@ -1514,7 +1515,7 @@ Top Header
 .nav-user-dropdown .dropdown-item {
     display: block;
     width: 100%;
-    padding: 12px 22px 15px;
+    padding: 8px 15px 15px;
     clear: both;
     font-weight: 400;
     color: #686972;
@@ -1664,11 +1665,11 @@ Left Navigation Sidebar
 ------------------------- */
 
 .nav-left-sidebar {
+    z-index: 9;
     position: fixed;
     width: 264px;
     height: 100%;
     top: 68px;
-    overflow: auto;
     background-color: #fff;
     -webkit-box-shadow: 0px 0px 28px 0px rgba(82, 63, 105, 0.13);
     box-shadow: 0px 0px 28px 0px rgba(82, 63, 105, 0.13);
@@ -1710,7 +1711,7 @@ Left Navigation Sidebar
 
 .nav-left-sidebar .navbar {
     position: relative;
-    padding: 7px 14px 14px 14px;
+    padding: 5px 0px;
 }
 
 .nav-left-sidebar .navbar-nav .nav-item {}
@@ -1770,6 +1771,114 @@ Left Navigation Sidebar
     background-color: transparent;
 }
 
+.nav-left-sidebar .nav-item{
+    position: relative;
+}
+
+.nav-left-sidebar .nav-item ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: 180px;
+    background-color: #131313;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    z-index: 1;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: opacity ease 0.35s;
+    -moz-transition: opacity ease 0.35s;
+    -ms-transition: opacity ease 0.35s;
+    -o-transition: opacity ease 0.35s;
+    transition: opacity ease 0.35s;
+}
+
+.nav-left-sidebar .nav-item:hover ul {
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav-left-sidebar .nav-item:hover > .nav-link {
+    color: #fff;
+    background-color: #242849;
+}
+
+.nav-left-sidebar .nav-item.active ul {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+}
+.nav-left-sidebar .nav-item ul > li{}
+.nav-left-sidebar .nav-item ul > li:first-child > a{
+    padding-top: 12px;
+}
+.nav-left-sidebar .nav-item ul > li:last-child > a{
+    padding-bottom: 12px;
+}
+.nav-left-sidebar .nav-item ul > li > a{
+    display: block;
+    color: #7a80b4;
+    padding: 5px 15px;
+    -webkit-transition: all ease .3s;
+    -moz-transition: all ease .3s;
+    -ms-transition: all ease .3s;
+    -o-transition: all ease .3s;
+    transition: all ease .3s;
+}
+.nav-left-sidebar .nav-item ul > li:hover > a{
+    color: #ffffff;
+}
+
+
+
+
+.nav-left-sidebar .nav-item.has-indicator > .nav-link::after{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    right: 20px;
+    vertical-align: 0.255em;
+    content: "";
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0;
+    border-left: 0.3em solid transparent;
+    top: 21px;
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+
+.nav-left-sidebar .nav-item.has-indicator.active > .nav-link::after{
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .nav-left-sidebar .navbar-toggler {
     background-color: #fff;
 }
@@ -1807,19 +1916,16 @@ Leftsidebar - Primary
 .sidebar-primary.nav-left-sidebar .navbar-nav .nav-link:hover {
     color: #fff;
     background-color: #5761c2;
-    border-radius: 2px;
 }
 
 .sidebar-primary.nav-left-sidebar .navbar-nav .nav-link:focus,
 .sidebar-primary.nav-left-sidebar .navbar-nav .nav-link.active {
     background-color: #5761c2;
     color: #fff;
-    border-radius: 2px;
 }
 
 .sidebar-primary.nav-left-sidebar .submenu .nav .nav-item .nav-link:hover {
     color: #fff;
-    border-radius: 2px;
     background-color: transparent;
 }
 
@@ -1965,6 +2071,7 @@ Container / Wrapper
 }
 
 .dashboard-wrapper {
+    z-index: 1;
     position: relative;
     left: 0;
     margin-left: 264px;
@@ -2082,7 +2189,7 @@ Pageheader
 
 .footer {
     border-top: 1px solid rgba(152, 166, 173, .2);
-    padding: 14px 30px 14px;
+    padding: 14px 15px 14px;
     color: #71748d;
     background-color: #fff;
     margin-left: 264px;
