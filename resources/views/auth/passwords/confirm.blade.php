@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="card-header text-center">
-        <a href="{{ url('/') }}"><img class="logo-img" src="{{ asset('admin/images/logo.png') }}" alt="{{ config('app.name', 'Concept') }}"></a>
+        <a href="{{ url('/') }}"><img class="logo-img" src="{{ asset('backend/images/logo.png') }}" alt="{{ config('app.name', 'Concept') }}"></a>
         <span class="splash-description">{{ __('Please confirm your password before continuing.') }}</span>
     </div>
     <div class="card-body">

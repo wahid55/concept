@@ -10,10 +10,10 @@
         <title>{{ config('app.name', 'Concept') }}</title>
         <!-- Bootstrap CSS -->
         <link rel="dns-prefetch" href="//fonts.gstatic.com">
-        <link href="{{ asset('admin/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-        <link href="{{ asset('admin/vendor/fonts/circular-std/style.css') }}" rel="stylesheet">
-        <link href="{{ asset('admin/libs/css/style.css') }}" rel="stylesheet">
-        <link href="{{ asset('admin/vendor/fonts/fontawesome/css/all.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('backend/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('backend/vendor/fonts/circular-std/style.css') }}" rel="stylesheet">
+        <link href="{{ asset('backend/libs/css/style.css') }}" rel="stylesheet">
+        <link href="{{ asset('backend/vendor/fonts/fontawesome/css/all.min.css') }}" rel="stylesheet">
 
         <style>
             html,
@@ -46,7 +46,7 @@
         <!-- end login page  -->
         <!-- ============================================================== -->
         <!-- Optional JavaScript -->
-        <script src="{{ asset('admin/vendor/jquery/jquery-3.4.1.min.js') }}"></script>
-        <script src="{{ asset('admin/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ asset('backend/vendor/jquery/jquery-3.4.1.min.js') }}"></script>
+        <script src="{{ asset('backend/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     </body>
 </html>
