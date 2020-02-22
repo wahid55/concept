@@ -87,11 +87,11 @@
                                 <a class="nav-link" href="#"><i class="fas fa-comments"></i> {{ __('Comments') }}</a>
                             </li>
                             <li class="nav-item has-indicator">
-                                <a class="nav-link" href="#"><i class="fas fa-users"></i> {{ __('Users') }}</a>
+                                <a class="nav-link" href="{{ route('users.index') }}"><i class="fas fa-users"></i> {{ __('Users') }}</a>
                                 <ul>
-                                    <li><a href="#">{{ __('All Users') }}</a></li>
-                                    <li><a href="#">{{ __('Add New') }}</a></li>
-                                    <li><a href="#">{{ __('Your Profile') }}</a></li>
+                                    <li><a href="{{ route('users.index') }}">{{ __('All Users') }}</a></li>
+                                    <li><a href="{{ route('users.create') }}">{{ __('Add New') }}</a></li>
+                                    <li><a href="{{ route('users.edit', Auth::user()) }}">{{ __('Your Profile') }}</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item has-indicator">
