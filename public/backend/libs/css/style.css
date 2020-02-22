@@ -6475,6 +6475,7 @@ Vertical Timeline - by CodyHouse.co
 
 .form-group.row label {
     white-space: nowrap;
+    font-weight: 500;
 }
 
 .email-compose-fields label {
