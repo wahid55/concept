@@ -161,7 +161,7 @@ body {
 }
 
 body {
-    font-family: 'Circular Std Book';
+    font-family: 'Roboto';
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
@@ -178,7 +178,7 @@ h5,
 h6 {
     color: #3d405c;
     margin: 0px 0px 15px 0px;
-    font-family: 'Circular Std Medium';
+    font-family: 'Roboto';
 }
 
 h1 {
@@ -415,7 +415,7 @@ address {}
 
 .custom-control-label::after {
     position: absolute;
-    top: 7px;
+    top: 6px;
     left: 0;
     display: block;
     width: 1rem;
@@ -774,7 +774,7 @@ Parsley Varifation
 ---------------------*/
 
 html body .font-bold {
-    font-weight: 800;
+    font-weight: 700;
 }
 
 html body .font-normal {
@@ -786,7 +786,7 @@ html body .font-light {
 }
 
 html body .font-medium {
-    font-weight: 600;
+    font-weight: 500;
 }
 
 html body .font-16 {
@@ -1727,12 +1727,12 @@ Left Navigation Sidebar
     /* margin-bottom: 2px; */
     color: #71789e;
     transition: 0.3s;
+    font-weight: 500;
 }
 
 .nav-left-sidebar .nav-link i {
     font-size: 16px;
-    margin-right: 10px;
-    text-align: center;
+    width: 30px;
 }
 
 .nav-divider {
@@ -4356,6 +4356,16 @@ Pills vertical
     margin-right: 0px;
 }
 
+.btn-light:hover {
+    background-color: #f0f0f8;
+    border-color: #f0f0f8;
+}
+
+.btn-light.focus, .btn-light:focus {
+    background-color: #f0f0f8;
+    border-color: #f0f0f8;
+    box-shadow: none;
+}
 
     /*-----------------------
     2.15 Spinner
@@ -5621,7 +5631,7 @@ Vertical Timeline - by CodyHouse.co
     font-size: 12px;
     line-height: 1;
     text-align: center;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .dd-item>button:before {
@@ -5729,7 +5739,7 @@ Vertical Timeline - by CodyHouse.co
     padding: 5px 10px 5px 40px;
     color: #333;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 700;
     border: 1px solid #ccc;
     background: #fafafa;
     background: -webkit-linear-gradient(top, #fafafa 0%, #eee 100%);

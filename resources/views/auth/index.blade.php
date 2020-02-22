@@ -11,7 +11,7 @@
         <!-- Bootstrap CSS -->
         <link rel="dns-prefetch" href="//fonts.gstatic.com">
         <link href="{{ asset('backend/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-        <link href="{{ asset('backend/vendor/fonts/circular-std/style.css') }}" rel="stylesheet">
+        <link href="{{ asset('backend/vendor/fonts/roboto/fonts.css') }}" rel="stylesheet">
         <link href="{{ asset('backend/libs/css/style.css') }}" rel="stylesheet">
         <link href="{{ asset('backend/vendor/fonts/fontawesome/css/all.min.css') }}" rel="stylesheet">
 
