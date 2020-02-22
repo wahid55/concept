@@ -71,5 +71,44 @@ jQuery(document).ready(function($) {
         });
     }
 
+    if ($('select').length) {
+        $('select').selectpicker();
+    }
+
+
+    $('table').each(function () {
+        var table = $(this);
+        table.find('thead input.checkall').click(function () {
+            table.find('tbody input[name="item"]').prop('checked', this.checked);
+        });
+    });
+
+
+    $('.action_form').submit(function (e) {
+        e.preventDefault();
+        var val = $(this).find('select[name="action"]').val(),
+            resultForm = $('.result_form');
+
+        if(resultForm.find('input[name="item"]:checked').length < 1) {
+            swal({
+                title: "No item selected",
+                text: "Please select some items from the list.",
+                closeOnClickOutside: false,
+                closeOnEsc: false
+            });
+            return;
+        }
+
+        if(val) {
+            resultForm.find('input[name="action"]').val(val);
+            resultForm.submit();
+        } else {
+            swal({
+                title: "Please select an action",
+                closeOnClickOutside: false,
+                closeOnEsc: false
+            });
+        }
+    });
 
 }); // AND OF JQUERY

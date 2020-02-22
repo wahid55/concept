@@ -363,6 +363,11 @@ button.btn-primary {}
 
 address {}
 
+.bootstrap-select .dropdown-toggle:focus,
+.bootstrap-select>select.mobile-device:focus+.dropdown-toggle {
+    outline: none !important;
+}
+
 .form-group {
     margin-bottom: 12px;
 }
@@ -2027,6 +2032,7 @@ Sidebar Page Navigations
     font-size: 14px;
     color: #3d405c;
     border: 1px solid #e6e6f2;
+    padding: .2rem 0;
 }
 
 .dropdown-item {
@@ -2727,6 +2733,50 @@ clip-path: polygon(10% 25%, 10% 0, 35% 0%, 65% 0%, 90% 0, 90% 25%, 90% 50%, 91% 
 /* -----------------------
 2.1  Alerts
 -------------------------*/
+.swal-modal {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+.swal-title {
+    font-size: 20px;
+    color: #3d405c;
+    margin-bottom: 0px !important;
+    font-weight: normal;
+    margin-top: 15px !important;
+    padding-bottom: 0px;
+}
+.swal-text {
+    margin-top: 15px !important;
+}
+
+.swal-button {
+    padding: 6px 15px;
+    border-radius: 0;
+    background-color: #5969ff !important;
+    font-size: 12px;
+    border: 1px solid #5969ff;
+    text-shadow: none;
+}
+
+.swal-button:hover {
+    background-color: #4656e9 !important;
+    border: 1px solid #4656e9;
+}
+
+.swal-footer {
+    margin-top: 0 !important;
+    text-align: center;
+}
+
+.swal-button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+
+
 
 
 /* -----------------------
@@ -4296,10 +4346,20 @@ Pills vertical
     border-color: #5969ff;
 }
 
+.page-link:focus {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
 
-/*-----------------------
-2.15 Spinner
--------------------------*/
+.pagination .page-item:last-child .page-link {
+    margin-right: 0px;
+}
+
+
+    /*-----------------------
+    2.15 Spinner
+    -------------------------*/
 
 .spinner-xxl {
     width: 150px;
@@ -4416,6 +4476,10 @@ Pills vertical
     position: relative;
     overflow: hidden;
     vertical-align: middle;
+}
+
+.custom-checkbox {
+    position: relative;
 }
 
 .switch-button input[type=checkbox] {
@@ -4621,6 +4685,10 @@ Pills vertical
 /*-----------------------
 5.1.  General
 --------------------*/
+
+.table_filter .btn {
+    padding: 5px 12px;
+}
 
 .table {
     margin-bottom: 0px;

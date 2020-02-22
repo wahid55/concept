@@ -12,6 +12,7 @@
         <!-- Bootstrap CSS -->
         <link rel="dns-prefetch" href="//fonts.gstatic.com">
         <link href="{{ asset('backend/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('backend/vendor/bootstrap-select/css/bootstrap-select.min.css') }}" rel="stylesheet">
         <link href="{{ asset('backend/vendor/fonts/circular-std/style.css') }}" rel="stylesheet">
         <link href="{{ asset('backend/libs/css/style.css') }}" rel="stylesheet">
         <link href="{{ asset('backend/vendor/fonts/fontawesome/css/all.min.css') }}" rel="stylesheet">
@@ -109,7 +110,7 @@
                         <div class="col-lg-12">
                             <div class="page-header">
                                 <h2 class="pageheader-title">@yield('title', 'Page Title')</h2>
-                                @if(request()->route()->getName() != 'dashboard')
+                                @if(request()->route()->getName() == 'dashboard')
                                     <div class="page-breadcrumb">
                                         <nav aria-label="breadcrumb">
                                             <ol class="breadcrumb">
@@ -148,6 +149,8 @@
 
         <script src="{{ asset('backend/vendor/jquery/jquery-3.4.1.min.js') }}"></script>
         <script src="{{ asset('backend/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ asset('backend/vendor/bootstrap-select/js/bootstrap-select.min.js') }}"></script>
+        <script src="{{ asset('backend/vendor/sweetalert/sweetalert.min.js') }}"></script>
         <script src="{{ asset('backend/libs/js/main-js.js') }}"></script>
         @yield('footer')
     </body>
