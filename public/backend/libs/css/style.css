@@ -4355,6 +4355,11 @@ Pills vertical
     box-shadow: none;
 }
 
+.pagination {
+    margin-bottom: 0px;
+    margin-top: 20px;
+}
+
 .pagination .page-item:last-child .page-link {
     margin-right: 0px;
 }
@@ -4710,7 +4715,7 @@ Pills vertical
 .table td,
 .table th {
     padding: 10px;
-    vertical-align: middle;
+    vertical-align: middle !important;
     border-top: 1px solid #e6e6f2;
     font-weight: normal;
 }

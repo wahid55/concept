@@ -110,7 +110,7 @@
                         <div class="col-lg-12">
                             <div class="page-header">
                                 <h2 class="pageheader-title">@yield('title', 'Page Title')</h2>
-                                @if(request()->route()->getName() == 'dashboard')
+                                @if(request()->route()->getName() != 'dashboard')
                                     <div class="page-breadcrumb">
                                         <nav aria-label="breadcrumb">
                                             <ol class="breadcrumb">

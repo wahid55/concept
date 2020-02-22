@@ -17,16 +17,9 @@
                     </form>
                 </div>
                 <div class="col-md-6">
-                    <form class="form-inline float-md-right filter_form">
-                        <select class="form-control form-control-sm mb-2 mr-sm-2" name="date" title="All Dates" data-width="120px">
-                            <option>January, 2020</option>
-                            <option>February, 2020</option>
-                        </select>
-                        <select class="form-control form-control-sm mb-2 mr-sm-2" name="category" title="All Categories" data-width="150px">
-                            <option>Category 1</option>
-                            <option>Uncategorized</option>
-                        </select>
-                        <button type="submit" class="btn btn-xs btn-primary mb-2">{{ __('Filter') }}</button>
+                    <form action="" method="GET" class="form-inline float-md-right search_form" autocomplete="off">
+                        <input type="text" class="form-control form-control-sm mb-2 mr-sm-2" name="search" placeholder="{{ __('Search') }}">
+                        <button type="submit" class="btn btn-xs btn-primary mb-2">{{ __('Search') }}</button>
                     </form>
                 </div>
             </div>
@@ -41,40 +34,47 @@
                                         <input type="checkbox" class="custom-control-input checkall"><span class="custom-control-label"></span>
                                     </label>
                                 </th>
-                                <th>Name</th>
-                                <th>Position</th>
-                                <th>Office</th>
-                                <th>Age</th>
-                                <th>Start date</th>
-                                <th>Salary</th>
+                                <th>{{ __('Name') }}</th>
+                                <th>{{ __('Email') }}</th>
+                                <th class="text-center">{{ __('Role') }}</th>
+                                <th class="text-center">{{ __('Posts') }}</th>
+                                <th class="text-center">{{ __('Joined') }}</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>
-                                    <label class="custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" name="item" value="1"><span class="custom-control-label"></span>
-                                    </label>
-                                </td>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>Edinburgh</td>
-                                <td>61</td>
-                                <td>2011/04/25</td>
-                                <td>$320,800</td>
-                            </tr>
+                            @foreach($users as $user)
+                                <tr>
+                                    <td>
+                                        <label class="custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" name="item" value="{{ $user->id }}"><span class="custom-control-label"></span>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <div class="media">
+                                            <img src="{{ asset('backend/images/avatar.svg') }}" class="align-self-center mr-3" alt="{{ $user->name }}" width="40">
+                                            <div class="media-body">
+                                                <h5 class="m-0">{{ $user->name }}</h5>
+                                                <p class="m-0"><a href="{{ route('users.edit', $user) }}">{{ __('Edit') }}</a> | <a href="{{ route('users.destroy', $user) }}">{{ __('Delete') }}</a> | <a href="{{ route('users.show', $user) }}" target="_blank">{{ __('View') }}</a></p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><a href="mailto:{{ $user->email }}">{{ $user->email }}</a></td>
+                                    <td class="text-center">
+                                        @if($user->role->id == 1)
+                                            <span class="badge badge-primary">{{ $user->role->name }}</span></td>
+                                        @elseif($user->role->id == 2)
+                                            <span class="badge badge-success">{{ $user->role->name }}</span></td>
+                                        @elseif($user->role->id == 3)
+                                            <span class="badge badge-info">{{ $user->role->name }}</span></td>
+                                        @endif
+                                    <td class="text-center"><a href="#">0</a></td>
+                                    <td class="text-center">{{ $user->created_at->format('M d, Y') }}<br>{{ $user->created_at->format('g:i a') }}</td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </form>
-
-                <ul class="pagination mt-3 mb-0">
-                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item active"><a class="page-link " href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                </ul>
-
+                {{ $users->links() }}
             </div>
         </div>
     </div>
