@@ -6,11 +6,12 @@
 @section('content')
     <div class="card">
         <div class="card-body">
-            <form action="" method="POST" autocomplete="off">
+            <form action="{{ route('users.store') }}" method="POST" autocomplete="off">
+                @csrf
                 <div class="form-group row">
                     <label class="col-12 col-sm-3 col-lg-2 col-form-label" for="name">{{ __('Name') }}</label>
                     <div class="col-12 col-sm-8 col-lg-5">
-                        <input id="name" type="text" class="form-control form-control-lg @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" autofocus>
+                        <input id="name" type="text" class="form-control form-control-lg @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}">
                         @error('name')
                             <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
                         @enderror
@@ -37,10 +38,10 @@
                 <div class="form-group row">
                     <label class="col-12 col-sm-3 col-lg-2 col-form-label" for="role_id">{{ __('Role') }}</label>
                     <div class="col-12 col-sm-8 col-lg-5">
-                        <select name="role_id" data-width="100%">
-                            <option value="1">Administrator</option>
-                            <option value="2">Author</option>
-                            <option value="3">Subscriber</option>
+                        <select name="role_id" id="role_id" data-width="100%">
+                            @foreach($roles as $role)
+                                <option value="{{ $role->id }}">{{ $role->name }}</option>
+                            @endforeach
                         </select>
                     </div>
                 </div>

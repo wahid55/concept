@@ -6,6 +6,9 @@
 @section('content')
     <div class="card">
         <div class="card-body">
+            @if(Session::has('message'))
+                <div class="alert alert-success"><strong>{{ Session::get('message') }}</strong></div>
+            @endif
             <div class="row table_filter">
                 <div class="col-md-6">
                     <form class="form-inline action_form">

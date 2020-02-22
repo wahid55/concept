@@ -26,7 +26,8 @@ class AdminUsersController extends Controller
      */
     public function create()
     {
-
+        $roles = Role::orderBy('id', 'DESC')->get();
+        return view('admin.users.create', compact('roles'));
     }
 
     /**
@@ -37,7 +38,16 @@ class AdminUsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'role_id' => ['required', 'integer'],
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:6'],
+        ]);
+
+        User::create($request->all());
+
+        return redirect()->route('users.index')->with('message', 'User created successfully.');
     }
 
     /**
