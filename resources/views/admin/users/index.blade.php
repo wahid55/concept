@@ -32,7 +32,7 @@
                     <table class="table table-striped table-bordered">
                         <thead>
                             <tr>
-                                <th>
+                                <th width="40">
                                     <label class="custom-checkbox">
                                         <input type="checkbox" class="custom-control-input checkall"><span class="custom-control-label"></span>
                                     </label>

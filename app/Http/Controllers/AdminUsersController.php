@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Role;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class AdminUsersController extends Controller
 {
@@ -69,7 +70,9 @@ class AdminUsersController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::findOrFail($id);
+        $roles = Role::orderBy('id', 'DESC')->get();
+        return view('admin.users.edit', compact('user', 'roles'));
     }
 
     /**
@@ -81,7 +84,35 @@ class AdminUsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'role_id' => ['required', 'integer'],
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore($id)],
+            'password' => ['nullable', 'string', 'min:6'],
+        ]);
+
+
+        $user = User::findOrFail($id);
+
+        if($request->get('role_id')){
+            $user->role_id = $request->get('role_id');
+        }
+
+        if($request->get('name')) {
+            $user->name = $request->get('name');
+        }
+
+        if($request->get('email')) {
+            $user->email = $request->get('email');
+        }
+
+        if($request->get('password')) {
+            $user->password = bcrypt($request->get('password'));
+        }
+
+        $user->update();
+
+        return redirect()->route('users.index')->with('message', 'User updated successfully.');
     }
 
     /**
