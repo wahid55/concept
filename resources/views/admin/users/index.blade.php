@@ -57,7 +57,13 @@
                                             <img src="{{ asset('backend/images/avatar.svg') }}" class="align-self-center mr-3" alt="{{ $user->name }}" width="40">
                                             <div class="media-body">
                                                 <h5 class="m-0">{{ $user->name }}</h5>
-                                                <p class="m-0"><a href="{{ route('users.edit', $user) }}">{{ __('Edit') }}</a> | <a href="{{ route('users.destroy', $user) }}">{{ __('Delete') }}</a> | <a href="{{ route('users.show', $user) }}" target="_blank">{{ __('View') }}</a></p>
+                                                <p class="m-0">
+                                                    <a href="{{ route('users.edit', $user) }}">{{ __('Edit') }}</a> |
+                                                    @if($user->id != Auth::user()->id)
+                                                        <a href="{{ route('users.destroy', $user) }}" class="delete">{{ __('Delete') }}</a> |
+                                                    @endif
+                                                    <a href="{{ route('users.show', $user) }}" target="_blank">{{ __('View') }}</a>
+                                                </p>
                                             </div>
                                         </div>
                                     </td>

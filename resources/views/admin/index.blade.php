@@ -146,6 +146,11 @@
             </div>
         </div>
 
+        <form action="" method="POST" id="deleteForm">
+            @csrf
+            @method('DELETE')
+        </form>
+
 
         <script src="{{ asset('backend/vendor/jquery/jquery-3.4.1.min.js') }}"></script>
         <script src="{{ asset('backend/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
@@ -153,5 +158,12 @@
         <script src="{{ asset('backend/vendor/sweetalert/sweetalert.min.js') }}"></script>
         <script src="{{ asset('backend/libs/js/main-js.js') }}"></script>
         @yield('footer')
+
+        <script>
+            $('.delete').click(function (e) {
+                e.preventDefault();
+                $('#deleteForm').attr('action', $(this).attr('href')).submit();
+            });
+        </script>
     </body>
 </html>
